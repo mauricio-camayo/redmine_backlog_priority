@@ -1,0 +1,5 @@
+= redmine_backlog_priority
+
+We use a special target version to use as backlog, and we specify the priority using a custom field in redmine.
+
+This simple plugin let us have a unique number as priority, if an issue is to be saved with the same priority, it adds 1 to the next issue.

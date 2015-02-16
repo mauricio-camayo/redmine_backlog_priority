@@ -1,0 +1,32 @@
+<%#
+# To change this license header, choose License Headers in Project Properties.
+# To change this template file, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<%= content_tag(:h1, l(:backlog_priority_settings)) %>
+
+<span id="custom_field_name">
+    <span>
+        <%= content_tag(:h2, l(:label_custom_field_name_title)) %>
+        <p>
+            <%= content_tag(:label, l(:label_custom_field_name)) %>
+            <%= select("settings[custom_field_name]", "", 
+              CustomField.where('type = "IssueCustomField" and field_format = "int"').collect {|c| [c.name, c.id]}, 
+              selected: @settings["custom_field_name"]) %>
+        </p>
+    </span>
+    <hr>
+</span>
+<span id="tracker">
+    <span>
+        <%= content_tag(:h2, l(:label_target_version_title)) %>
+        <p>
+            <%= content_tag(:label, l(:label_target_version)) %>
+            <%= select("settings[target_version]", "", 
+              Version.all.collect {|v| [v.name, v.id]}, 
+              selected: @settings["target_version"]) %>
+        </p>
+    </span>
+    <hr>
+</span>

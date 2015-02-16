@@ -1,0 +1,7 @@
+# English strings go here for Rails i18n
+en:
+  backlog_priority_settings: "Backlog priority settings"
+  label_custom_field_name_title: "Select the custom field to verify"
+  label_custom_field_name: "Select the custom field to verify"
+  label_target_version_title: "Select target version"
+  label_target_version: "Select target version"
