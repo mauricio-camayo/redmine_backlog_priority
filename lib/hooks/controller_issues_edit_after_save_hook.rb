@@ -11,10 +11,8 @@ module Hooks
           return ''
         end
         if current_issue[:fixed_version_id] != Setting.plugin_redmine_backlog_priority['target_version'].at(0).to_i
-          puts "\n\n  NO ES target version = BACKLOG"
           return ''
         end
-        puts "\n \n -----------------------------"
         puts current_issue.inspect
         puts current_issue[:fixed_version_id].inspect
         
