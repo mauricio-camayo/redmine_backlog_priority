@@ -10,6 +10,13 @@ module Hooks
         if current_issue.status.is_closed
           return ''
         end
+        if current_issue[:fixed_version_id] != Setting.plugin_redmine_backlog_priority['target_version'].at(0).to_i
+          puts "\n\n  NO ES target version = BACKLOG"
+          return ''
+        end
+        puts "\n \n -----------------------------"
+        puts current_issue.inspect
+        puts current_issue[:fixed_version_id].inspect
         
         context[:params][:issue][:custom_field_values].each do |c|
           if c.at(0) == Setting.plugin_redmine_backlog_priority['custom_field_name'].at(0)
